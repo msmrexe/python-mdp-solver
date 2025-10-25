@@ -5,7 +5,7 @@ This project provides a Python implementation of **Value Iteration** and **Polic
 ## Features
 
 * **Stochastic Environment:** The agent's actions are non-deterministic (80% chance of intended move, 10% slip left, 10% slip right).
-* **Configurable MDP:** The `Gridworld` class cleanly defines states, actions, transitions ($T(s, a, s')$), and rewards ($R(s)$).
+* **Configurable MDP:** The `Gridworld` class cleanly defines states, actions, transitions ( $T(s, a, s')$ ), and rewards ( $R(s)$ ).
 * **Value Iteration:** Implements the value iteration algorithm to find the optimal utility function.
 * **Policy Iteration:** Implements the policy iteration algorithm, which alternates between policy evaluation and policy improvement.
 * **Clear Visualization:** The `main.py` script prints the final utilities for each state and the optimal policy as a grid of arrows.
@@ -15,7 +15,7 @@ This project provides a Python implementation of **Value Iteration** and **Polic
 * **Markov Decision Processes (MDPs):** The formal definition of the problem (States, Actions, Transitions, Rewards).
 * **Dynamic Programming:** Both algorithms use dynamic programming to break the problem into smaller subproblems.
 * **Bellman Equations:** The theoretical foundation for both algorithms.
-* **Utility Functions:** Calculating the long-term "desirability" of a state ($U(s)$).
+* **Utility Functions:** Calculating the long-term "desirability" of a state ( $U(s)$ ).
 * **Optimal Policies:** Determining the best action $\pi^*(s)$ to take in any given state.
 * **Convergence:** Iterating until the utility functions or policy stabilize.
 
@@ -31,7 +31,7 @@ The `Gridworld` class defines the entire MDP:
 * **Grid:** A 4x3 world with a start state `(2,0)`, a wall at `(1,1)`, a goal at `(0,3)` (reward +1), and a trap at `(1,3)` (reward -1).
 * **States:** All `(row, col)` tuples except the wall. The goal and trap are **terminal states**.
 * **Rewards:** $R(s) = +1$ for the goal, $R(s) = -1$ for the trap, and $R(s) = -0.04$ (a "living penalty") for all other states to encourage efficiency.
-* **Transitions ($T(s, a, s')$):** The core of the MDP. `getTransitions(state, action)` returns a list of `(probability, next_state)` tuples. For any action, there is:
+* **Transitions ( $T(s, a, s')$ ):** The core of the MDP. `getTransitions(state, action)` returns a list of `(probability, next_state)` tuples. For any action, there is:
     * An 80% chance of moving in the intended direction.
     * A 10% chance of slipping 90 degrees to the "left" of the intended direction.
     * A 10% chance of slipping 90 degrees to the "right".
